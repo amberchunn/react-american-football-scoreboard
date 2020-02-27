@@ -13,6 +13,30 @@ function App() {
 	// Away Team Score
 	const [awScore, setAwScore] = useState(0);
 
+	// Clicky Events - Update State
+	// const hmFieldGoal = document.querySelector('homeButtons__fieldgoal');
+
+	// const hmTouchDown = document.querySelector('homeButtons__touchdown');
+
+	// const awFieldGoal = document.querySelector('awayButtons__fieldgoal');
+
+	// const awTouchDown = document.querySelector('awayButtons__touchdown');
+
+	// fieldGoal.addEventListener('click', event => {
+	// 	event.className == homeButtons ? setHmScore(hmScore + 3) : setAwScore(awScore + 3);
+	// });
+
+	// touchDown.addEventListener('click', event => {
+	// 	const bit =
+	// 		event.className == homeButtons
+	// 			? setHmScore(hmScore + 7)
+	// 			: setAwScore(awScore + 7);
+	// });
+
+	//   <button onClick={() => setHmScore(hmScore + 3)}>
+	//   Click me
+	// </button>
+
 	return (
 		<div className="container">
 			<section className="scoreboard">
@@ -35,12 +59,32 @@ function App() {
 			<section className="buttons">
 				<div className="homeButtons">
 					{/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-					<button className="homeButtons__touchdown">Home Touchdown</button>
-					<button className="homeButtons__fieldGoal">Home Field Goal</button>
+					<button
+						className="homeButtons__touchdown"
+						onClick={() => setHmScore(hmScore + 7)}
+					>
+						Home Touchdown!
+					</button>
+					<button
+						className="homeButtons__fieldGoal"
+						onClick={() => setHmScore(hmScore + 3)}
+					>
+						Home Field Goal!
+					</button>
 				</div>
 				<div className="awayButtons">
-					<button className="awayButtons__touchdown">Away Touchdown</button>
-					<button className="awayButtons__fieldGoal">Away Field Goal</button>
+					<button
+						className="awayButtons__touchdown"
+						onClick={() => setAwScore(awScore + 7)}
+					>
+						Away Touchdown!
+					</button>
+					<button
+						className="awayButtons__fieldGoal"
+						onClick={() => setAwScore(awScore + 7)}
+					>
+						Away Field Goal!
+					</button>
 				</div>
 			</section>
 		</div>
